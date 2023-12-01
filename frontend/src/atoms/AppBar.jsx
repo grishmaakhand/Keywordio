@@ -1,5 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,7 +17,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
 const drawerWidth = 240;
-const navItems = ["Dashbord", "Create Ads"];
+const navItems = [
+  { label: "Dashboard", path: "/dashboard" },
+  { label: "Create Ads", path: "/createads" },
+];
 
 function DrawerAppBar(props) {
   const { window } = props;
@@ -34,9 +38,13 @@ function DrawerAppBar(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton
+              component={Link}
+              to={item.path}
+              sx={{ textAlign: "center" }}
+            >
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -71,8 +79,14 @@ function DrawerAppBar(props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button variant="h4" key={item} sx={{ color: "#323c46" }}>
-                {item}
+              <Button
+                component={Link}
+                to={item.path}
+                variant="h4"
+                key={item.label}
+                sx={{ color: "#323c46" }}
+              >
+                {item.label}
               </Button>
             ))}
           </Box>
@@ -98,7 +112,7 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main">
         <Toolbar />
       </Box>
     </Box>
@@ -106,10 +120,6 @@ function DrawerAppBar(props) {
 }
 
 DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
