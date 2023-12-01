@@ -1,23 +1,21 @@
 import React from "react";
-import { alpha, styled } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
-
 import InputLabel from "@mui/material/InputLabel";
-
 import FormControl from "@mui/material/FormControl";
 
-export default function InputFields() {
+export default function InputFields({ heading, placeholder }) {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "label + &": {
-      marginTop: theme.spacing(3),
+      marginTop: theme.spacing(4),
     },
     "& .MuiInputBase-input": {
       borderRadius: 4,
       position: "relative",
       backgroundColor: "white",
-      color: "#EAEAEA",
+      color: "#999999",
       border: "1px solid",
-      borderColor: theme.palette.mode === "light" ? "#E0E3E7" : "#2D3843",
+      borderColor: "#E0E3E7",
       fontSize: 16,
       width: "auto",
       padding: "10px 12px",
@@ -26,31 +24,28 @@ export default function InputFields() {
         "background-color",
         "box-shadow",
       ]),
-      // Use the system font instead of the default Roboto font.
-      fontFamily: [
-        "-apple-system",
-        "BlinkMacSystemFont",
-        '"Segoe UI"',
-        "Roboto",
-        '"Helvetica Neue"',
-        "Arial",
-        "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(","),
-      "&:focus": {
-        boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-        borderColor: theme.palette.primary.main,
-      },
     },
   }));
+
+  const StyledInputLabel = styled(InputLabel)(({ theme }) => ({
+    color: "#36404a", // Change the color to your desired style
+    fontSize: 16, // Change the font size to your desired style
+    fontFamily: "Open Sans",
+    fontWeight: "bold", // Change the font weight to your desired style
+
+    transform: "translate(0, 0px) scale(1)",
+  }));
+
   return (
-    <FormControl variant="standard">
-      <InputLabel shrink htmlFor="bootstrap-input">
-        Bootstrap
-      </InputLabel>
-      <BootstrapInput defaultValue="react-bootstrap" id="bootstrap-input" />
+    <FormControl>
+      <StyledInputLabel shrink={false} htmlFor="bootstrap-input">
+        {heading}
+      </StyledInputLabel>
+      <BootstrapInput
+        defaultValue={placeholder}
+        id="bootstrap-input"
+        style={{ paddingRight: "10px" }}
+      />
     </FormControl>
   );
 }
