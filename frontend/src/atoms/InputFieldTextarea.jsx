@@ -4,20 +4,21 @@ import InputBase from "@mui/material/InputBase";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 
-export default function InputFields({ heading, placeholder }) {
+export default function InputFieldTextarea({ heading, placeholder }) {
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "label + &": {
       marginTop: theme.spacing(4),
     },
     "& .MuiInputBase-input": {
       borderRadius: 4,
-      position: "relative",
+
       backgroundColor: "white",
       color: "#999999",
       border: "1px solid",
       borderColor: "#E0E3E7",
       fontSize: 16,
-      width: "100%",
+
+      height: "120px",
       padding: "10px 12px",
       transition: theme.transitions.create([
         "border-color",
@@ -37,8 +38,10 @@ export default function InputFields({ heading, placeholder }) {
   }));
 
   return (
-    <FormControl className="w-full">
-      <StyledInputLabel shrink={false} htmlFor="bootstrap-input">
+    <FormControl className="w-full flex-container">
+      {" "}
+      {/* Add the flex-container class here */}
+      <StyledInputLabel shrink={true} htmlFor="bootstrap-input">
         {heading}
       </StyledInputLabel>
       <BootstrapInput

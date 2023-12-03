@@ -1,10 +1,11 @@
 import React from "react";
-import InputFields from "../atoms/InputFields";
+
+import NestedModal from "../atoms/NestedModal";
 
 export default function CreateAds() {
   return (
-    <div style={{ background: "#fafafa", padding: "35px" }}>
-      <InputFields heading="Heading 01" placeholder="add" />
+    <div className="bg-[#fafafa] p-[15px] md:p-[35px]">
+      <NestedModal />
     </div>
   );
 }
