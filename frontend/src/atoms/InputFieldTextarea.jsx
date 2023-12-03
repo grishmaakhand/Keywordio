@@ -1,11 +1,11 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
+import TextareaAutosize from "@mui/material/TextareaAutosize";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 
 export default function InputFieldTextarea({ heading, placeholder }) {
-  const BootstrapInput = styled(InputBase)(({ theme }) => ({
+  const BootstrapTextarea = styled(TextareaAutosize)(({ theme }) => ({
     "label + &": {
       marginTop: theme.spacing(4),
     },
@@ -39,15 +39,15 @@ export default function InputFieldTextarea({ heading, placeholder }) {
 
   return (
     <FormControl className="w-full flex-container">
-      {" "}
       {/* Add the flex-container class here */}
-      <StyledInputLabel shrink={true} htmlFor="bootstrap-input">
+      <StyledInputLabel shrink={true} htmlFor="bootstrap-textarea">
         {heading}
       </StyledInputLabel>
-      <BootstrapInput
-        defaultValue={placeholder}
-        id="bootstrap-input"
-        style={{ paddingRight: "10px" }}
+      <BootstrapTextarea
+        aria-label="minimum height"
+        minRows={3}
+        placeholder={placeholder}
+        id="bootstrap-textarea"
       />
     </FormControl>
   );

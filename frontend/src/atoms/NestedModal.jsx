@@ -9,11 +9,13 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
+  width: "100%",
+  height: "30%",
 
-  width: 400,
   bgcolor: "background.paper",
   boxShadow: 5,
   padding: "50px",
+  borderRadius: 2,
 };
 
 export default function NestedModal() {
@@ -48,9 +50,20 @@ export default function NestedModal() {
         onClose={handleClose}
         BackdropComponent={BackdropComponent}
       >
-        <Box sx={{ ...style, width: 400 }}>
-          <CheckCircleIcon />
-          <h2 className="text-[#36404a] text-[18px] text-base font-sans font-semibold ">
+        <Box
+          sx={{
+            ...style,
+            width: "25em",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
+          <CheckCircleIcon
+            style={{ fontSize: "3em", color: "blue" }} // Change size and color
+          />
+          <h2 className="text-[#36404a] text-[22px] text-base font-sans font-semibold ">
             Submitted
           </h2>
         </Box>
