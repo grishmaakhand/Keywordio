@@ -1,14 +1,28 @@
 import { Checkbox } from "@mui/material";
 import React from "react";
 
-export default function TextMediaCards({ img, subheading, heading }) {
+export default function TextMediaCards({
+  img,
+  subheading,
+  heading,
+  onSelect,
+  isSelected,
+}) {
   return (
-    <div className="flex flex-col w-[300px]  bg-white border rounder-md shadow-sm">
+    <div
+      className={`flex flex-col w-[300px]  bg-white border rounder-md shadow-sm ${
+        isSelected ? "border-blue-500" : ""
+      }`}
+    >
       <div className="flex justify-start">
-        <Checkbox sx={{ color: "grey" }} />
+        <Checkbox
+          sx={{ color: "grey" }}
+          onChange={onSelect}
+          checked={isSelected}
+        />
       </div>
       <div className="flex  justify-center items-center ">
-        <img src={img} alt="text" className=" w-[300px] h-[300px]" />
+        <img src={img} alt="text" className="w-[300px] h-[300px]" />
       </div>
       <div className="flex flex-col justify-center items-center h-[60px] p-5 bg-slate-50">
         <h4 className="text-gray-400 text-[14px] text-base font-sans ">

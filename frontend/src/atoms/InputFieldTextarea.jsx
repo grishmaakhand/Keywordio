@@ -11,13 +11,11 @@ export default function InputFieldTextarea({ heading, placeholder }) {
     },
     "& .MuiInputBase-input": {
       borderRadius: 4,
-
-      backgroundColor: "white",
+      backgroundColor: "red",
       color: "#999999",
       border: "1px solid",
       borderColor: "#E0E3E7",
       fontSize: 16,
-
       height: "120px",
       padding: "10px 12px",
       transition: theme.transitions.create([
@@ -44,10 +42,11 @@ export default function InputFieldTextarea({ heading, placeholder }) {
         {heading}
       </StyledInputLabel>
       <BootstrapTextarea
-        aria-label="minimum height"
-        minRows={3}
+        className="border-[1px] border-[#E0E3E7] rounded-sm p-1"
+        minRows={5}
         placeholder={placeholder}
         id="bootstrap-textarea"
+        style={{ paddingRight: "10px" }}
       />
     </FormControl>
   );

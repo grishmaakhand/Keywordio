@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import Button from "@mui/material/Button";
+
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 const style = {
@@ -18,14 +18,7 @@ const style = {
   borderRadius: 2,
 };
 
-export default function NestedModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+export default function NestedModal({ open, onClose }) {
   const BackdropComponent = (props) => (
     <div
       style={{
@@ -34,9 +27,8 @@ export default function NestedModal() {
         left: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: "rgba(255, 255, 255, 0.5)", // Semi-transparent background
-        backdropFilter: "blur(5px)", // Adjust the blur intensity as needed
-        // Ensure it's above the modal
+        backgroundColor: "rgba(255, 255, 255, 0.5)",
+        backdropFilter: "blur(5px)",
       }}
       {...props}
     />
@@ -44,10 +36,9 @@ export default function NestedModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={onClose}
         BackdropComponent={BackdropComponent}
       >
         <Box

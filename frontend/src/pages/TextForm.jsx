@@ -3,7 +3,7 @@ import FormForText from "../organisms/FormForText";
 
 export default function TextForm() {
   return (
-    <div>
+    <div className="bg-[#fafafa] p-[15px] md:p-[35px]">
       <FormForText />
     </div>
   );
