@@ -83,11 +83,11 @@ export default function FormForMedia() {
           heading="Website URL"
           placeholder="Add the URL of the landing page you want to redirect useres to"
         />
-        <div className="flex flex-col md:flex-row justify-end gap-5 m-5">
+        <div className="flex flex-col md:flex-row justify-end gap-5 m-5 ">
           <Link to="/createads">
             <button
               type="button"
-              className="text-gray-900 bg-white border border-gray-300 font-small md:font-medium rounded-sm text-lg px-7 md:px-10 py-2"
+              className=" w-full text-gray-900 bg-white border border-gray-300 font-small md:font-medium rounded-sm text-lg px-7 md:px-10 py-2"
             >
               Back
             </button>

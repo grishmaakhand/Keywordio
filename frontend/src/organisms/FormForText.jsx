@@ -68,7 +68,7 @@ export default function FormForText() {
           <Link to="/createads">
             <button
               type="button"
-              className="text-gray-900 bg-white border border-gray-300 font-small md:font-medium rounded-sm text-lg px-7 md:px-10 py-2"
+              className=" w-full text-gray-900 bg-white border border-gray-300 font-small md:font-medium rounded-sm text-lg px-7 md:px-10 py-2"
             >
               Back
             </button>

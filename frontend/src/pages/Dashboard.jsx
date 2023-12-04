@@ -1,12 +1,15 @@
 import React from "react";
 import MainTable from "../molecules/MainTable";
-import Switches from "../atoms/Switches";
+import ToggleSideTable from "../organisms/ToggleSideTable";
 
 export default function DashBoard() {
   return (
-    <div style={{ background: "#fafafa", padding: "35px" }}>
+    <div
+      className="flex flex-col gap-5 lg:flex-row justify-center  w-600"
+      style={{ background: "#fafafa", padding: "35px" }}
+    >
       <MainTable />
-      <Switches />
+      <ToggleSideTable />
     </div>
   );
 }

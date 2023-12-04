@@ -63,7 +63,7 @@ export default function MainTable() {
         borderWidth: 1,
         borderColor: "#E0E0E0",
         borderRadius: "8px",
-        width: "701px",
+
         background: "white",
       }}
     >
